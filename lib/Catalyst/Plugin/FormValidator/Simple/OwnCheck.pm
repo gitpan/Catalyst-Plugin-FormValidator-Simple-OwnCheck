@@ -41,6 +41,7 @@ Catalyst::Plugin::FormValidator::Simple::OwnCheck - Validator for Catalyst with 
     }
 
 in  your Checker.pm
+
 	package MyApp::Checker;
 	use strict;
 	use FormValidator::Simple::Exception;
@@ -78,31 +79,6 @@ See L<FormValidator::Simple> for more information.
 
 This behaves like as L<Catalyst::Plugin::FormValidator>.
 
-=head1 CONFIGURATION
-
-set config with 'validator' key.
-
-    MyApp->config->{validator} = { ... };
-
-or
-
-    MyApp->config(
-        validator => { ... },
-    );
-
-=head2 PLUGINS
-
-If you want to use some plugins for FormValidator::Simple, you can set like following.
-
-    MyApp->config(
-        validator => {
-            plugins => [qw/Japanese CreditCard DBIC::Unique/],
-            plugins_owncheck => [qw/MyApp::Checker1 MyApp::Checker2/],
-        },
-    );
-
-In this example, FormValidator::Simple::Plugin::Japanese, FormValidator::Simple::Plugin::CreditCard,
-, FormValidator::Simple::Plugin::DBIC::Unique,MyApp::Checker1 and  MyApp::Checker2 are loaded.
 
 
 =head1 SEE ALSO
